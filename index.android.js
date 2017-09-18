@@ -14,7 +14,7 @@ export default class gosalon extends Component {
           Happy hacking!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.android.js
+          great
         </Text>
         <Text style={styles.instructions}>
           Double tap R on your keyboard to reload,{'\n'}
