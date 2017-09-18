@@ -14,7 +14,7 @@ export default class gosalon extends Component {
           Welcome
         </Text>
         <Text style={styles.instructions}>
-          great
+          Cool
         </Text>
         <Text style={styles.instructions}>
           Double tap R on your keyboard to reload,{'\n'}
