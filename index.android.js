@@ -11,7 +11,7 @@ export default class gosalon extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Happy hacking!
+          Welcome
         </Text>
         <Text style={styles.instructions}>
           great
