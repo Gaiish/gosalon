@@ -5,7 +5,8 @@ import {StyleSheet} from 'react-native';
 export default class SearchBar extends Component{
   render(){
     return(
-      <Header searchBar style={styles.searchBar}>
+      <Header searchBar style={styles.searchBar}
+        androidStatusBarColor="#EF4E42">
         <Item>
           <Icon name="ios-search" style={styles.searchIcon} />
           <Input placeholder="search services" />
@@ -17,7 +18,7 @@ export default class SearchBar extends Component{
 
 const styles = StyleSheet.create({
   searchBar:{
-    backgroundColor: "#FFF"
+    backgroundColor: "#FFF",
   },
   searchIcon:{
     color: "#EF4E42"
