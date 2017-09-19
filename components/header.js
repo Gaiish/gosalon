@@ -6,6 +6,7 @@ import {StyleSheet, View} from 'react-native';
 import RegionSelect from './regionSelect';
 import SearchBar from './searchbar';
 import CategoryList from './categories';
+import styles from '../styles/styles';
 
 export default class Head extends Component{
   render(){
@@ -29,9 +30,3 @@ export default class Head extends Component{
     )
   }
 }
-
-const styles = StyleSheet.create({
-  header:{
-    backgroundColor: "#EF4E42",
-  },
-})

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet} from 'react-native';
 import {Picker} from 'native-base';
+import styles from '../styles/styles';
 
 export default class RegionSelect extends Component{
   render(){
@@ -17,10 +18,3 @@ export default class RegionSelect extends Component{
     )
   }
 }
-
-const styles = StyleSheet.create({
-  picker:{
-    width: 250,
-    color: "#FFF",
-  },
-});

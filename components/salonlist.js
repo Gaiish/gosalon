@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import EasyListView from 'react-native-easy-listview-gridview';
 import {View, StyleSheet} from 'react-native';
 import {Card, CardItem, Thumbnail, Text} from 'native-base';
+import styles from '../styles/styles';
 
 export default class CategoryList extends Component{
   renderGridItem(index, rowData, sectionId, rowId, highlightRow){
@@ -54,10 +55,3 @@ const sample = [
     name: 'Sky Salon'
   }
 ]
-
-const styles = StyleSheet.create({
-  rowContainer:{
-    flex: 1,
-    overflow: 'hidden',
-  }
-})

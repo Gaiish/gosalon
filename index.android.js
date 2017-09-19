@@ -9,7 +9,6 @@ import Head from './components/header';
 //import SearchBar from './components/searchbar';
 //import CategoryList from './components/categories';
 import SalonList from './components/salonlist';
-import styles from './styles/styles';
 
 class gosalon extends Component {
   render() {
