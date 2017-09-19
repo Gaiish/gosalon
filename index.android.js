@@ -1,47 +1,24 @@
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { Container, Header, Title, Content, Footer, FooterTab,
+  Button, Left, Right, Body, Icon, Text, Item, Input
+} from 'native-base';
+import {AppRegistry} from 'react-native';
+import Head from './components/header';
+import SearchBar from './components/searchbar';
 
-export default class gosalon extends Component {
+class gosalon extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Happy hacking!
-        </Text>
-        <Text style={styles.instructions}>
-          Cool
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+      <Container>
+        <Head />
+        <Content>
+          <SearchBar />
+          <Text>
+            This is Content Section
+          </Text>
+        </Content>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
 AppRegistry.registerComponent('gosalon', () => gosalon);
