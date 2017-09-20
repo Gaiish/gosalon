@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "919568197129",
+    "firebase_url": "https://gosalon-3d16c.firebaseio.com",
+    "project_id": "gosalon-3d16c",
+    "storage_bucket": "gosalon-3d16c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919568197129:android:d508888931d9ad3a",
+        "android_client_info": {
+          "package_name": "com.gosalon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919568197129-vglqoarv60ubmdiiu2obbtf6acnsii83.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy5MZYqQG1HGE9YIzacLaKsWiUqCKezk0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,7 +10,7 @@ export default class CategoryList extends Component{
       <View key={index} style={styles.rowContainer}>
         <Card>
           <CardItem cardBody>
-            <Thumbnail square source={require('../img/img1.jpg')}
+            <Thumbnail square source={require('../img/img3.jpg')}
               style={{height:100, width: 180}}
             />
           </CardItem>

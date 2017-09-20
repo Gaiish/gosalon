@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { Container, Header, Title, Content, Footer, FooterTab,
-  Button, Left, Right, Body, Icon, Text, Item, Input
-} from 'native-base';
+import { Container, Content } from 'native-base';
 
 import {AppRegistry} from 'react-native';
 
 import Head from './components/header';
-//import SearchBar from './components/searchbar';
-//import CategoryList from './components/categories';
 import SalonList from './components/salonlist';
 
 class gosalon extends Component {
@@ -15,11 +11,12 @@ class gosalon extends Component {
     return (
       <Container>
         <Head />
-        <Content style={styles.content}>
+        <Content>
           <SalonList />
         </Content>
       </Container>
     );
   }
 }
+
 AppRegistry.registerComponent('gosalon', () => gosalon);

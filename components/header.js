@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {
-  Header, Button, Left, Right, Body, Icon, Container
+  Header, Button, Left, Right, Body, Icon
 } from 'native-base';
 import {StyleSheet, View} from 'react-native';
 import RegionSelect from './regionSelect';
