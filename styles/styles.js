@@ -28,5 +28,14 @@ export default styles = StyleSheet.create({
   picker:{
     width: 250,
     color: "#FFF",
+  },
+  mutedText:{
+    fontSize: 14,
+    color: "#999",
+    paddingVertical:0
+  },
+  muted:{
+    paddingTop:0,
+    marginTop:0
   }
 })

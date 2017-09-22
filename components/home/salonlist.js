@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EasyListView from 'react-native-easy-listview-gridview';
-import {View, StyleSheet} from 'react-native';
+import {TouchableOpacity, StyleSheet} from 'react-native';
 import {Card, CardItem, Thumbnail, Text} from 'native-base';
 import styles from '../../styles/styles';
 
@@ -23,13 +23,9 @@ export default class SalonList extends Component{
     })
   }
 
-  //componentDidMount(){
-  //  this.fetchData();
-  //}
-
   renderGridItem(index, rowData, sectionId, rowId, highlightRow){
     return (
-      <View key={index} style={styles.rowContainer}>
+      <TouchableOpacity key={index} style={styles.rowContainer}>
         <Card>
           <CardItem cardBody>
             <Thumbnail square source={{uri: rowData.pic}}
@@ -39,8 +35,11 @@ export default class SalonList extends Component{
           <CardItem>
             <Text>{rowData.name}</Text>
           </CardItem>
+          <CardItem style={styles.muted}>
+            <Text style={styles.mutedText}>{rowData.info}</Text>
+          </CardItem>
         </Card>
-      </View>
+      </TouchableOpacity>
     )
   }
 
@@ -58,24 +57,3 @@ export default class SalonList extends Component{
     )
   }
 }
-
-const sample = [
-  {
-    name: 'Beauty Salon'
-  },
-  {
-    name: 'Salm Salon'
-  },
-  {
-    name: 'Karma Salon'
-  },
-  {
-    name: 'Sky Salon'
-  },
-  {
-    name: 'Sky Salon'
-  },
-  {
-    name: 'Sky Salon'
-  }
-]
