@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Content } from 'native-base';
 import {AppRegistry, Alert} from 'react-native';
-import Head from './components/header';
-import SalonList from './components/salonlist';
+import Head from './components/home/header';
+import SalonList from './components/home/salonlist';
 
 import RNFirebase from 'react-native-firebase';
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Item, Header, Input, Icon} from 'native-base';
 import {StyleSheet} from 'react-native';
-import styles from '../styles/styles';
+import styles from '../../styles/styles';
 
 export default class SearchBar extends Component{
   render(){

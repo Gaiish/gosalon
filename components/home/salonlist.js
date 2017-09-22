@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import EasyListView from 'react-native-easy-listview-gridview';
 import {View, StyleSheet} from 'react-native';
 import {Card, CardItem, Thumbnail, Text} from 'native-base';
-import styles from '../styles/styles';
+import styles from '../../styles/styles';
 
 export default class CategoryList extends Component{
   renderGridItem(index, rowData, sectionId, rowId, highlightRow){
@@ -10,7 +10,7 @@ export default class CategoryList extends Component{
       <View key={index} style={styles.rowContainer}>
         <Card>
           <CardItem cardBody>
-            <Thumbnail square source={require('../img/img3.jpg')}
+            <Thumbnail square source={require('../../img/img3.jpg')}
               style={{height:100, width: 180}}
             />
           </CardItem>
