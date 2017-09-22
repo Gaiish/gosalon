@@ -6,7 +6,7 @@ import SalonList from './components/home/salonlist';
 
 import RNFirebase from 'react-native-firebase';
 
-const config = {debug: true}
+const config = {debug: true, persistence: true}
 var app = RNFirebase.initializeApp(config);
 //var db = app.database();
 
@@ -14,6 +14,15 @@ class gosalon extends Component {
   constructor(){
     super();
     this.unsubscribe = null;
+    this.salonsRef = null;
+    this.salonsPicRef = null;
+  }
+
+  componentWillMount(){
+    let db = app.database();
+    this.salonsRef = db.ref('all_salons');
+    let storage = app.storage();
+    this.picStorage = storage.ref('/aishabp.jpg');
   }
 
   componentDidMount(){
@@ -21,7 +30,6 @@ class gosalon extends Component {
       if(user){
         //signed in
         console.log('user already signed in:',user);
-        this.getData();
       }
       else{
         //login anonymously
@@ -40,19 +48,13 @@ class gosalon extends Component {
     }
   }
 
-  getData(){
-    let db = app.database();
-    db.ref('all_salons').on('value', (snap)=>{
-      console.log('snapshot:', snap.val());
-    })
-  }
-
   render() {
     return (
       <Container>
         <Head />
         <Content>
-          <SalonList />
+          <SalonList salonsRef={this.salonsRef}
+            salonsPicRef={this.picStorage} />
         </Content>
       </Container>
     );
