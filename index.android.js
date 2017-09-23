@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Content } from 'native-base';
-import {AppRegistry, Alert} from 'react-native';
+import {AppRegistry} from 'react-native';
 import Head from './components/home/header';
 import SalonList from './components/home/salonlist';
 import Search from './components/search/search';
@@ -17,6 +17,9 @@ class Home extends Component {
     super();
     this.unsubscribe = null;
     this.salonsRef = null; //ref for salons
+    this.state = {
+      inputedText: ''
+    }
   }
 
   componentWillMount(){
@@ -48,12 +51,25 @@ class Home extends Component {
   }
 
   static navigationOptions ={
-    header: <Head />
+    header: null
   }
 
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <Container>
+        <Head placeholder="search services"
+              submit={()=> navigate('Search',
+              {inputedText: this.state.inputedText})}
+              onChangeText={(inputedText)=>this.setState({inputedText})}
+              cat1="Facials"
+              cat2="Body"
+              cat3="Hair"
+              cat4="Nails"
+              cat5="Make Up"
+              cat6="Massage"
+              cat7="Ear Piercing"
+        />
         <Content>
           <SalonList salonsRef={this.salonsRef} />
         </Content>

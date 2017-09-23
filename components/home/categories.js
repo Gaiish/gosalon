@@ -4,6 +4,10 @@ import {Button, Icon, Text} from 'native-base';
 import styles from '../../styles/styles';
 
 export default class CategoryList extends Component{
+  constructor(props){
+    super(props);
+  }
+
   render(){
     return(
       <ScrollView
@@ -11,31 +15,31 @@ export default class CategoryList extends Component{
         showsHorizontalScrollIndicator={false}>
         <Button transparent style={styles.btnIcon}>
           <Icon name="pizza" style={styles.icon} />
-          <Text style={styles.btnTxt}>Facials</Text>
+          <Text style={styles.btnTxt}>{this.props.cat1}</Text>
         </Button>
         <Button transparent style={styles.btnIcon}>
           <Icon name="pie" style={styles.icon} />
-          <Text style={styles.btnTxt}>Body</Text>
+          <Text style={styles.btnTxt}>{this.props.cat2}</Text>
         </Button>
         <Button transparent style={styles.btnIcon}>
           <Icon name="nutrition" style={styles.icon} />
-          <Text style={styles.btnTxt}>Hair</Text>
+          <Text style={styles.btnTxt}>{this.props.cat3}</Text>
         </Button>
         <Button transparent style={styles.btnIcon}>
           <Icon name="star-half" style={styles.icon} />
-          <Text style={styles.btnTxt}>Nails</Text>
+          <Text style={styles.btnTxt}>{this.props.cat4}</Text>
         </Button>
         <Button transparent style={styles.btnIcon}>
           <Icon name="ionic" style={styles.icon} />
-          <Text style={styles.btnTxt}>Make up</Text>
+          <Text style={styles.btnTxt}>{this.props.cat5}</Text>
         </Button>
         <Button transparent style={styles.btnIcon}>
           <Icon name="wine" style={styles.icon} />
-          <Text style={styles.btnTxt}>Massage</Text>
+          <Text style={styles.btnTxt}>{this.props.cat6}</Text>
         </Button>
         <Button transparent style={styles.btnIcon}>
           <Icon name="appstore" style={styles.icon} />
-          <Text style={styles.btnTxt}>Ear Piercing</Text>
+          <Text style={styles.btnTxt}>{this.props.cat7}</Text>
         </Button>
       </ScrollView>
     )

@@ -9,6 +9,10 @@ import CategoryList from './categories';
 import styles from '../../styles/styles';
 
 export default class Head extends Component{
+  constructor(props){
+    super(props);
+  }
+
   render(){
     return(
       <View>
@@ -24,8 +28,19 @@ export default class Head extends Component{
           </Body>
           <Right />
         </Header>
-        <SearchBar />
-        <CategoryList />
+        <SearchBar placeholder={this.props.placeholder}
+                   submit={this.props.submit}
+                   onChangeText={this.props.onChangeText}
+        />
+        <CategoryList
+          cat1={this.props.cat1}
+          cat2={this.props.cat2}
+          cat3={this.props.cat3}
+          cat4={this.props.cat4}
+          cat5={this.props.cat5}
+          cat6={this.props.cat6}
+          cat7={this.props.cat7}
+        />
       </View>
     )
   }
