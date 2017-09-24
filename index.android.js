@@ -10,7 +10,7 @@ import RNFirebase from 'react-native-firebase';
 
 const config = {debug: true, persistence: true}
 var app = RNFirebase.initializeApp(config);
-//var db = app.database();
+var db = app.database();//creating an instance of the database
 
 class Home extends Component {
   constructor(){
@@ -23,7 +23,6 @@ class Home extends Component {
   }
 
   componentWillMount(){
-    let db = app.database();
     this.salonsRef = db.ref('all_salons');
   }
 
@@ -60,15 +59,12 @@ class Home extends Component {
       <Container>
         <Head placeholder="search services"
               submit={()=> navigate('Search',
-              {inputedText: this.state.inputedText})}
+              {inputedText: this.state.inputedText,
+              searchRef: db.ref('all_services')})}
               onChangeText={(inputedText)=>this.setState({inputedText})}
-              cat1="Facials"
-              cat2="Body"
-              cat3="Hair"
-              cat4="Nails"
-              cat5="Make Up"
-              cat6="Massage"
-              cat7="Ear Piercing"
+              categories={categories}
+              navigation={this.props.navigation}
+              searchRef={db.ref('all_services')}
         />
         <Content>
           <SalonList salonsRef={this.salonsRef} />
@@ -77,6 +73,16 @@ class Home extends Component {
     );
   }
 }
+
+const categories = [
+  {iconName:'pizza', label:'facials'},
+  {iconName:'pie', label:'body'},
+  {iconName: 'nutrition', label:'hair'},
+  {iconName:'star-half', label:'nails'},
+  {iconName: 'ionic', label:'make up'},
+  {iconName: 'wine', label:'massage'},
+  {iconName: 'appstore', label:'ear piercing'},
+]
 
 const gosalon = StackNavigator({
   Home: {screen: Home},

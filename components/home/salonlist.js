@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EasyListView from 'react-native-easy-listview-gridview';
-import {TouchableOpacity, StyleSheet} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {Card, CardItem, Thumbnail, Text} from 'native-base';
 import styles from '../../styles/styles';
 

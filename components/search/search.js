@@ -1,22 +1,32 @@
 import React, {Component} from 'react';
-import {Container, Header, Item, Input, Icon} from 'native-base';
+import {Container, Content, Header, Item, Input, Icon} from 'native-base';
 import styles from '../../styles/styles';
+import ResultList from './resultList';
 
 export default class Search extends Component{
+  constructor(){
+    super();
+    this.state={
+      inputedText: ''
+    }
+  }
+
   static navigationOptions = {
     header: null
+  }
+
+  componentWillMount(){
+    const {params} = this.props.navigation.state;
+    let inputedText = params.inputedText;
+    this.setState({inputedText});
   }
 
   render(){
     const {params} = this.props.navigation.state;
     const {goBack} = this.props.navigation;
 
-    for (let i in this.props.navigation){
-      console.log(i)
-    }
-
     return(
-      <Container>
+      <Container style={styles.searchContainer}>
         <Header searchBar style={styles.searchBar}
           androidStatusBarColor="#EF4E42">
           <Item>
@@ -24,10 +34,17 @@ export default class Search extends Component{
               onPress ={()=> goBack()}
             />
             <Input placeholder="search"
-              value={params.inputedText}
+              value={this.state.inputedText}
+              onChangeText={(inputedText)=>this.setState({inputedText})}
             />
           </Item>
         </Header>
+        <Content>
+          <ResultList
+            searchRef={params.searchRef}
+            searchKey={params.inputedText}
+          />
+        </Content>
       </Container>
     )
   }

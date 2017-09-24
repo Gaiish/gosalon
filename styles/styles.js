@@ -37,5 +37,8 @@ export default styles = StyleSheet.create({
   muted:{
     paddingTop:0,
     marginTop:0
+  },
+  searchContainer:{
+    backgroundColor: "#FFF"
   }
 })

@@ -9,11 +9,21 @@ export default class CategoryList extends Component{
   }
 
   render(){
+    const {navigate} = this.props.navigation;
     return(
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}>
-        <Button transparent style={styles.btnIcon}>
+        {this.props.categories.map((btn, index)=>(
+          <Button transparent style={styles.btnIcon}
+            key={index}
+            onPress={()=>navigate('Search', {inputedText: btn.label,
+              searchRef: this.props.searchRef})}>
+            <Icon name={btn.iconName} style={styles.icon} />
+            <Text style={styles.btnTxt}>{btn.label}</Text>
+          </Button>
+        ))}
+        {/*<Button transparent style={styles.btnIcon}>
           <Icon name="pizza" style={styles.icon} />
           <Text style={styles.btnTxt}>{this.props.cat1}</Text>
         </Button>
@@ -40,7 +50,7 @@ export default class CategoryList extends Component{
         <Button transparent style={styles.btnIcon}>
           <Icon name="appstore" style={styles.icon} />
           <Text style={styles.btnTxt}>{this.props.cat7}</Text>
-        </Button>
+        </Button>*/}
       </ScrollView>
     )
   }
