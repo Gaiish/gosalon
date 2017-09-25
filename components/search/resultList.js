@@ -6,23 +6,7 @@ export default class ResultList extends Component{
   constructor(props)
   {
     super(props);
-    this.state={list:[]};
-  }
-  componentDidMount(){
-    let all_services = this.props.searchRef;
-    let searchKey = this.props.searchKey;
 
-    //query data in the db at all_services node
-    all_services.orderByChild(searchKey)
-      .equalTo(true)
-      .on('child_added', (snap)=> {
-        console.log("state before:", this.state.list)
-        let salons = snap.val();
-        let list=[]
-        list.push(salons)
-        this.setState({list});
-        console.log("state after:", this.state.list)
-      })
   }
 
   renderRow(item){
@@ -42,7 +26,7 @@ export default class ResultList extends Component{
 
   render(){
     return(
-      <List dataArray={this.state.list}
+      <List dataArray={this.props.list}
             renderRow={this.renderRow.bind(this)}>
       </List>
     )
