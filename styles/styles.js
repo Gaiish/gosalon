@@ -40,5 +40,23 @@ export default styles = StyleSheet.create({
   },
   searchContainer:{
     backgroundColor: "#FFF"
+  },
+  profileImg:{
+    height: 200,
+    width:null,
+    flex:1
+  },
+  cash:{
+    color: "#EF4E42"
+  },
+  arr_bck:{
+    position: "absolute",
+    top:0,
+    left: 0,
+    padding: 5,
+    margin:7,
+  },
+  bck:{
+    color: "#EF4E42"
   }
 })

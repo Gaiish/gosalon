@@ -4,6 +4,7 @@ import {AppRegistry} from 'react-native';
 import Head from './components/home/header';
 import SalonList from './components/home/salonlist';
 import Search from './components/search/search';
+import Profile from './components/profile/profile';
 
 import {StackNavigator} from 'react-navigation';
 import RNFirebase from 'react-native-firebase';
@@ -67,7 +68,10 @@ class Home extends Component {
               searchRef={db.ref('all_services')}
         />
         <Content>
-          <SalonList salonsRef={this.salonsRef} />
+          <SalonList salonsRef={this.salonsRef}
+                      nav={this.props.navigation}
+                      profilesRef={db.ref('profiles')}
+          />
         </Content>
       </Container>
     );
@@ -86,7 +90,8 @@ const categories = [
 
 const gosalon = StackNavigator({
   Home: {screen: Home},
-  Search: {screen: Search}
+  Search: {screen: Search},
+  Profile: {screen: Profile}
 })
 
 AppRegistry.registerComponent('gosalon', () => gosalon);

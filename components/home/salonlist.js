@@ -24,8 +24,14 @@ export default class SalonList extends Component{
   }
 
   renderGridItem(index, rowData, sectionId, rowId, highlightRow){
+    const {navigate} = this.props.nav;
     return (
-      <TouchableOpacity key={index} style={styles.rowContainer}>
+      <TouchableOpacity key={index}
+        style={styles.rowContainer}
+        onPress={()=> navigate('Profile', {
+          profilesRef: this.props.profilesRef,
+          dbNode: rowData.name
+        })}>
         <Card>
           <CardItem cardBody>
             <Thumbnail square source={{uri: rowData.pic}}
