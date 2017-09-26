@@ -59,6 +59,7 @@ export default class SalonList extends Component{
         refreshHandler = {this.fetchData.bind(this)}
         loadMoreHandler={this.fetchData.bind(this)}
         column={2}
+        containerHeight={840}
       />
     )
   }

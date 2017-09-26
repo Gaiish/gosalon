@@ -10,6 +10,8 @@ export default class ResultList extends Component{
   }
 
   renderRow(item){
+    const {navigate} = this.props.nav;
+
     console.log('item: ',item)
     return(
       <ListItem thumbnail>

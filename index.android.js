@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Container, Content } from 'native-base';
-import {AppRegistry} from 'react-native';
+import {AppRegistry, View} from 'react-native';
 import Head from './components/home/header';
 import SalonList from './components/home/salonlist';
 import Search from './components/search/search';
 import Profile from './components/profile/profile';
+import Screens from './components/splash/screens';
 
 import {StackNavigator} from 'react-navigation';
 import RNFirebase from 'react-native-firebase';
@@ -61,13 +62,16 @@ class Home extends Component {
         <Head placeholder="search services"
               submit={()=> navigate('Search',
               {inputedText: this.state.inputedText,
-              searchRef: db.ref('all_services')})}
+              searchRef: db.ref('all_services'),
+              profileRef: db
+            }
+            )}
               onChangeText={(inputedText)=>this.setState({inputedText})}
               categories={categories}
               navigation={this.props.navigation}
               searchRef={db.ref('all_services')}
         />
-        <Content>
+        <Content >
           <SalonList salonsRef={this.salonsRef}
                       nav={this.props.navigation}
                       profilesRef={db.ref('profiles')}
@@ -89,6 +93,7 @@ const categories = [
 ]
 
 const gosalon = StackNavigator({
+  Splash:{screen: Screens},
   Home: {screen: Home},
   Search: {screen: Search},
   Profile: {screen: Profile}

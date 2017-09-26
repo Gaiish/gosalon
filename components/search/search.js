@@ -54,6 +54,8 @@ export default class Search extends Component{
     const {params} = this.props.navigation.state;
     const {goBack} = this.props.navigation;
 
+    //console.log("params from ref profiles:", params.profileRef)
+
     return(
       <Container style={styles.searchContainer}>
         <Header searchBar style={styles.searchBar}
@@ -73,6 +75,8 @@ export default class Search extends Component{
           {this.searching==true ? (<Spinner color='red' />) : (
             <ResultList
               list={this.state.list}
+              nav={this.props.navigation}
+              profilesRef={params.profilesRef}
             />
           ) }
         </Content>
