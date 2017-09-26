@@ -59,7 +59,7 @@ class Home extends Component {
     const {navigate} = this.props.navigation;
     return (
       <Container>
-        <Head placeholder="search services"
+        <Head placeholder="search gosalon"
               submit={()=> navigate('Search',
               {inputedText: this.state.inputedText,
               searchRef: db.ref('all_services'),

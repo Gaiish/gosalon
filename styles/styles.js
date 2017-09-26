@@ -55,6 +55,7 @@ export default styles = StyleSheet.create({
     left: 0,
     padding: 5,
     margin:7,
+    zIndex:1000
   },
   bck:{
     color: "#EF4E42"
